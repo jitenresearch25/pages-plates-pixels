@@ -6,3 +6,52 @@
 
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin:0 0 4rem}.contact-card,.message-card{background:var(--paper);border:1px solid var(--line);border-radius:1.6rem;padding:clamp(1.2rem,3vw,2rem);box-shadow:0 10px 30px rgba(23,33,47,.06)}.social-links{display:grid;gap:.75rem;margin-top:1rem}.social-link{display:flex;justify-content:space-between;gap:1rem;align-items:center;border:1px solid var(--line);border-radius:1rem;padding:.85rem 1rem;background:#fffaf2;font-weight:800}.social-link span{color:var(--muted);font-weight:600}.contact-form{display:grid;gap:.8rem}.contact-form label{font-weight:800}.contact-form input,.contact-form textarea{width:100%;border:1px solid var(--line);border-radius:.9rem;padding:.85rem 1rem;background:#fffaf2;color:var(--ink);font:inherit}.contact-form textarea{min-height:150px;resize:vertical}.form-note{font-size:.92rem;color:var(--muted);margin-top:.4rem}.copy-status{font-weight:800;color:var(--green);min-height:1.3rem}
 @media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+/* Reduce layout shift: reserve image space before images load */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Navbar logo: fixed size so the navbar does not jump */
+.brand img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Hero logo: fixed size */
+.hero-logo {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+}
+
+/* Hero image: reserve stable space */
+.hero-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Post card images: reserve stable space */
+.post-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Featured/split section image: reserve stable space */
+.split-feature img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* General article/post images */
+.post-content img,
+main article img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
